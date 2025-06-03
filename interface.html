@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestionnaire de cours</title>
+  <link rel="stylesheet" href="css/styles-v2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="interface-container">
+    <header>
+      <h1>Gestionnaire de cours</h1>
+      <button onclick="logout()" style="position: absolute; top: 1rem; left: 1rem;">Déconnexion</button>
+    </header>
+
+    <main>
+      <!-- Onglet Planning -->
+      <section id="tab-planning" class="tab-content active">
+        <h2><i class="fa-solid fa-calendar-days"></i> Planning</h2>
+        <div id="emploi-tableau">Chargement de l'emploi du temps...</div>
+      </section>
+
+      <!-- Onglet Communication -->
+      <section id="tab-communication" class="tab-content">
+        <h2>
+          <i class="fa-solid fa-comments"></i> Communication
+          <button id="ajouterMessageBtn" style="display: none; margin-left: 1rem;" title="Ajouter un message">+</button>
+        </h2>
+        <div id="messages"></div>
+        <div id="chat-form" style="display: none;">
+          <textarea id="chatInput" placeholder="Votre message..."></textarea>
+          <button id="envoyerMessage">Envoyer</button>
+        </div>
+      </section>
+
+      <!-- Onglet Documents -->
+      <section id="tab-documents" class="tab-content">
+        <h2><i class="fa-solid fa-folder-open"></i> Documents</h2>
+        <div id="liste-docs">Chargement...</div>
+      </section>
+
+      <!-- Onglet Gestion des utilisateurs (ADMIN uniquement) -->
+      <section id="tab-utilisateurs" class="tab-content">
+        <h2><i class="fa-solid fa-users-cog"></i> Gestion des utilisateurs</h2>
+        <div id="utilisateurs-container">Chargement des utilisateurs...</div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-tab="planning"><i class="fa-solid fa-calendar"></i><span>Planning</span></button>
+      <button data-tab="communication"><i class="fa-solid fa-comment-dots"></i><span>Communication</span></button>
+      <button data-tab="documents"><i class="fa-solid fa-folder"></i><span>Documents</span></button>
+      <button id="btn-utilisateurs" data-tab="utilisateurs" style="display: none;">
+        <i class="fa-solid fa-users-cog"></i><span>Utilisateurs</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Modale de confirmation -->
+  <div id="confirmation-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <p id="confirmation-message">Êtes-vous sûr ?</p>
+      <div class="modal-buttons">
+        <button id="confirm-yes">Oui</button>
+        <button id="confirm-no">Non</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chargement du script principal -->
+  <script src="js/interface.js"></script>
+</body>
+</html>
