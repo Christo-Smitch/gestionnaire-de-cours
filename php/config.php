@@ -1,10 +1,10 @@
 
 <?php
 // php/config.php
-$host = 'localhost';
+$host = 'mysql.railway.internal';
 $user = 'root';
-$password = '';
-$database = 'gestion_cours';
+$password = 'JepbILXFLzxQTKdYcCxlNQoQuHUSVdAI';
+$database = 'railway';
 
 $conn = new mysqli($host, $user, $password, $database);
 
